@@ -104,13 +104,70 @@
 #### 클래스
 
 1. Main
+   - public
+     - statiac void main()
 2. Game
-3. Money
-4. Lotto
-5. LottoNumber
-6. WinningLotto
-7. Rank
-8. NumberGenerator
-9. User
-10. Const
+   - public
+     - void start()
+3. Money: 금액 관리
+   - field
+     - final int money
+   - public
+     - Money(int money): 1000원 이상일 경우만 생성
+   - private
+4. UserLottos
+   - field
+     - final List<Lotto> userLottos
+   - public
+     - UserLottos(int count): count만큼 Lotto 객체 선언해서 ArrayList<Lotto>를 만든 후 userLottos에 저장
+   - private
+     - 
+5. Lotto
+   - field
+     - final List<Integer> numbers
+   - public
+     - Lotto(List<Integer> numbers): numbers를 this.numbers에 저장
+   - private
+6. LottoNumber
+   - field
+     - final int number
+   - public
+     - LottoNumber(int number): number가 1~45 사이의 수 인지를 확인 후 this.number에 저장
+   - private
+7. WinningLotto
+   - field
+     - private final Lotto lotto
+     - private final int bonusNo
+   - public
+     - WinningLotto(Lotto lotto, int bonusNo)
+     - Rank match(Lotto userLotto)
+   - private
+8. Rank        //enum
+   - field
+     - private int countOfMatch
+     - private int winningMoney
+     - FIRST
+     - SECOND
+     - THIRD
+     - FOURTH
+     - FIFTH
+     - MISS
+   - public
+     - static Rank valueOf(int countOfMatch, boolean matchBonus)
+   - private
+     - matchCount(int countOfMatch)
+9. NumberGenerator
+   - field
+     - int number
+   - public
+     - NumberGenerator()
+   - private
+     - initRandomArray
+     - getRandomNumber
+10. User
+    - field
+    - pubic
+    - private
+11. Const
+    - field
 
